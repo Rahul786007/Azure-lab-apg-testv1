@@ -1,0 +1,21 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "applicationGateways_FWCIDEVAPGW02_name": {
+      "value": "FWCIDEVAPGW02"
+    },
+    "virtualNetworks_FC_FWCI_VNET_DEV_EUS_externalid": {
+      "value": "/subscriptions/97c303bc-3ff7-4dc5-ae7f-fa037206b45b/resourceGroups/FC-FWCI-RG-DEV-EUS/providers/Microsoft.Network/virtualNetworks/FC-FWCI-VNET-DEV-EUS"
+    },
+    "publicIPAddresses_FWCDEVAPGPIP01_externalid": {
+      "value": "/subscriptions/97c303bc-3ff7-4dc5-ae7f-fa037206b45b/resourceGroups/FC-FWCI-RG-DEV-APGW-EUS/providers/Microsoft.Network/publicIPAddresses/FWCDEVAPGPIP01"
+    },
+    "ApplicationGatewayWebApplicationFirewallPolicies_FWCIDEVGWPOLICY_externalid": {
+      "value": "/subscriptions/97c303bc-3ff7-4dc5-ae7f-fa037206b45b/resourceGroups/FC-FWCI-RG-DEV-APGW-EUS/providers/Microsoft.Network/ApplicationGatewayWebApplicationFirewallPolicies/FWCIDEVGWPOLICY"
+    },
+    "logAnalyticsWorkspaceId": {
+      "value": ""
+    }
+  }
+}

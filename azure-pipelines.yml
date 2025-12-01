@@ -1,0 +1,32 @@
+
+trigger:
+- main
+
+variables:
+  azureSubscription: 'YOUR-AZURE-SERVICE-CONNECTION' # replace with your Azure DevOps service connection name
+  resourceGroupName: 'FC-FWCI-RG-DEV-APGW-EUS'      # target resource group (use LAB subscription resource group)
+  location: 'eastus'
+  templateFile: 'main.bicep'
+  parametersFile: 'parameters-prod.json'
+
+stages:
+- stage: Deploy
+  displayName: Deploy Application Gateway to LAB
+  jobs:
+  - job: Deploy
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - task: AzureCLI@2
+      inputs:
+        azureSubscription: '$(azureSubscription)'
+        scriptType: 'bash'
+        scriptLocation: 'inlineScript'
+        inlineScript: |
+          echo "Deploying Bicep template..."
+          az deployment group create \
+            --resource-group $(resourceGroupName) \
+            --template-file $(templateFile) \
+            --parameters @$(parametersFile) \
+            --verbose
+      displayName: 'Deploy ARM/Bicep'
