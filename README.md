@@ -47,8 +47,6 @@ sslCertificates: [
 ]
 ```
 
-## Next steps I can do for you (pick one)
+## Next steps 
 - Replace inline `sslCertificates` with Key Vault references for each certificate (requires KV secret ids).
-- Fully expand the omitted `...` sections so the `appgw.bicep` file exactly matches the exported template (I can finish this if you want).
-- Create the repo in your GitHub and push the code (requires a PAT) or generate a ZIP (I will provide download).
 
